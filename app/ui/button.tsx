@@ -1,12 +1,16 @@
-import React from "react";
-
-interface ButtonProps {
+type ButtonProps = {
   children: React.ReactNode;
-}
+  loading: boolean;
+};
 
-export default function Button({ children }: ButtonProps) {
+export default function Button({ children, loading }: ButtonProps) {
   return (
-    <button className="mt-6 w-full h-10 rounded bg-cyan-600 font-bold text-lg hover:bg-cyan-400">
+    <button
+      disabled={loading}
+      className={
+        "mt-6 w-full h-10 rounded bg-cyan-600 font-bold text-lg hover:bg-cyan-400 disabled:bg-slate-400 disabled:cursor-not-allowed"
+      }
+    >
       {children}
     </button>
   );
