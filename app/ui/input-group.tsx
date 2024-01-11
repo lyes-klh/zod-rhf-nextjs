@@ -1,7 +1,6 @@
 import React from "react";
 import { UseFormRegister } from "react-hook-form";
 import { FormValues } from "@/app/lib/types";
-import { error } from "console";
 
 type Props = {
   name: keyof FormValues;
@@ -22,7 +21,7 @@ export default function InputGroup({
 }: Props) {
   return (
     <div className="w-full">
-      <label className="text-slate-500 text-md block">{label}</label>
+      <label className="text-slate-300 text-sm block">{label}</label>
       <input
         {...register(name)}
         type={type}
